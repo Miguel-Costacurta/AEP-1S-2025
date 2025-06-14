@@ -1,4 +1,4 @@
-let encontrado = false;
+let position;
 
 function pesquisar(){
     const pesquisa = document.getElementById("inputPesquisa");
@@ -17,23 +17,21 @@ function pesquisar(){
     mostrarLista(encontrado);
 }
 
-function mostrarLista(achado){
-    const tableHead = document.getElementById("tableHead")
+function mostrarLista(polo){
     const display = document.getElementById("divDisplay");
     const tabela = document.getElementById("tabela");
+   const bike = polo.bikeQntd ?? 'N/A';
+    const patinete = polo.patineteQntd ?? 'N/A';
 
-    if(encontrado){
-        display.style.display = 'inline';
+    display.style.display = 'inline';
 
-        polos.forEach(function(item){
-            const linha = `<td>Temos ${item.bikeQntd} biclicletas disponiveis!</td>
-                <td>Temos ${item.patineteQntd} patinetes disponiveis!</td>`
-            tabela.innerHTML += linha;
-        })
-    }
-    else{
-        tableHead.style.display = 'none';
-        display.style.display = 'inline';
-        tabela.innerHTML = (`<td>Infelizmente não temos nenhum item disponivel nessa região :(</td>`)
-    }
+ const linha = `
+        <tr>
+            <td>Temos ${bike} bicicletas disponíveis!</td>
+            <td>Temos ${patinete} patinetes disponíveis!</td>
+        </tr>
+    `;
+
+    tabela.innerHTML = linha;
+
 }
