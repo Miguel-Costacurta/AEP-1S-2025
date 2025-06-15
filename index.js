@@ -3,6 +3,22 @@ const display = document.getElementById("divDisplay");
 const tabela = document.getElementById("tabela");
 let posPolo;
 
+window.onload = function(){
+    mostrarPolos();
+}
+
+function mostrarPolos(){
+    const tabelaPolos = document.getElementById("pontosExistentes");
+    polos.forEach(polo=>{
+        const linha = `
+        <tr>
+            <td>${polo.nome}</td>
+        </tr>
+        `
+        tabelaPolos.innerHTML += linha;
+    })
+}
+
 function pesquisar(){
     let encontrado;
     const pesquisa = document.getElementById("inputPesquisa");
@@ -23,7 +39,6 @@ function pesquisar(){
             </tr>`
         tabela.innerHTML += linha;
     }
-
     pesquisaPolo();
 }
 

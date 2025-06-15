@@ -9,7 +9,7 @@ const polos = [
     {pos: 2, nome: 'Praça 7 De Setembro', lat:-23.422821164418053, lng:-51.953299297139914, bikeQntd:3, patineteQntd:12},
     {pos: 3, nome: 'Estação Terminal Intermodal', lat:-23.418473, lng:-51.938098, bikeQntd:10, patineteQntd:8},
     {pos: 4, nome: 'Vila Olimpica', lat:-23.41243379629831, lng:-51.9380194302094, bikeQntd:9, patineteQntd:6},
-    {pos: 5,nome: 'Praça Rocha Pombo', lat:-23.421404364983943, lng:-51.928969416709584, bikeQntd:0, patineteQntd:2},
+    {pos: 5, nome: 'Praça Rocha Pombo', lat:-23.421404364983943, lng:-51.928969416709584, bikeQntd:0, patineteQntd:2},
     {pos: 6, nome: 'Praça Farroupilha', lat:-23.401238275265484, lng:-51.92071718031649, bikeQntd:4, patineteQntd:4},
     {pos: 7, nome: 'Parque do Inga', lat:-23.425683400781892, lng:-51.93287028787328, bikeQntd:9, patineteQntd:8},
     {pos: 8, nome: 'Praça da Catedral', lat:-23.424571, lng:-51.938149, bikeQntd:1, patineteQntd:11},
