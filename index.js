@@ -78,44 +78,49 @@ function pesquisaPolo(){
                 </tr>`;
                 tabela.innerHTML = linha;
             }
+
+            if (polo.imagem) {
+                const imagemHtml = `
+                <tr>
+                    <td colspan="2" class="text-center">
+                        <img src="${polo.imagem}" alt="${polo.nome}" 
+                             class="img-fluid rounded-4 mt-2" 
+                             style="max-height: 200px; width: 100%; object-fit: cover; border: 1px solid #ccc;">
+                    </td>
+                </tr>`;
+                tabela.innerHTML += imagemHtml;
+            }
         }
     })
 
 }
 
-function cliquePolo(polo){
-    const bike = polo.bikeQntd ?? 'N/A';
-    const patinete = polo.patineteQntd ?? 'N/A';
+function cliquePolo(polo) {
+  const tabela = document.getElementById("tabela");
+  const tableHead = document.getElementById("tableHead");
+  const divDisplay = document.getElementById("divDisplay");
 
-    display.style.display = 'inline';
+  tabela.innerHTML = `
+    <tr>
+      <td>Temos ${polo.bikeQntd} bicicletas disponíveis!</td>
+      <td>Temos ${polo.patineteQntd} patinetes disponíveis!</td>
+    </tr>
+  `;
 
-    if(bike > 0 && patinete > 0){
-        const linha = `
-        <tr>
-            <td>Temos ${bike} bicicletas disponíveis!</td>
-            <td>Temos ${patinete} patinetes disponíveis!</td>
-        </tr>`;
-        tabela.innerHTML = linha;
-    }else if(bike == 0 && patinete > 0){
-        const linha = `
-        <tr>
-            <td>Infelizmente não temos bicicletas disponíveis!</td>
-            <td>Temos ${patinete} patinetes disponíveis!</td>
-        </tr>`;
-        tabela.innerHTML = linha;
-    }else if(bike > 0 && patinete == 0){
-        const linha = `
-        <tr>
-            <td>Temos ${bike} patinetes disponíveis!</td>
-            <td>Infelizmente não temos patinetes disponíveis!</td>
-        </tr>`;
-        tabela.innerHTML = linha;
-    }else{
-        const linha = `
-        <tr>
-            <td>Infelizmente não temos bicicletas disponíveis!</td>
-            <td>Infelizmente não temos patinetes disponíveis!</td>
-        </tr>`;
-        tabela.innerHTML = linha;
-    }
+  
+ if (polo.imagem) {
+  const imagemHtml = `
+    <tr>
+      <td colspan="2" class="text-center">
+        <img src="${polo.imagem}" alt="${polo.nome}" 
+             class="img-fluid rounded-4 mt-2" 
+             style="max-height: 200px; width: 100%; object-fit: cover; border: 1px solid #ccc;">
+      </td>
+    </tr>
+  `;
+  tabela.innerHTML += imagemHtml;
 }
+
+  divDisplay.style.display = "block";
+}
+
